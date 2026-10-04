@@ -589,7 +589,10 @@ for k, (num, head, body) in enumerate(take):
     text(s, 0.6, y, 2.8, 0.8, num, size=40, bold=True, anchor=MSO_ANCHOR.MIDDLE)
     text(s, 3.6, y + 0.02, 9.1, 0.4, head, size=20, bold=True)
     text(s, 3.6, y + 0.45, 9.1, 0.8, body, size=20)
-text(s, 0.6, 6.4, 12.1, 0.4, 'Code: GitHub link to be added', size=16, color=GRAY)
+t = text(s, 0.6, 6.4, 12.1, 0.4, 'Code: ', size=16, color=GRAY)
+r = t.text_frame.paragraphs[0].add_run(); r.text = 'github.com/vixtor771/handwritten-digit-recognition'
+r.font.name, r.font.size, r.font.color.rgb = FONT, Pt(16), GRAY
+r.hyperlink.address = 'https://github.com/vixtor771/handwritten-digit-recognition'
 s.notes_slide.notes_text_frame.text = (
     'To sum up. First, using only the chain rule we learned in class, we built our own network from scratch '
     'and it reads handwritten digits with 98.33% accuracy.\n'
