@@ -582,8 +582,9 @@ take = [(f'{acc["bp"][-1]:.2f}%', 'Backprop',
          'Using only what we learned in class, we built our own network that reads handwritten digits'),
         (f'{acc["fa"][-1]:.2f}%', 'Feedback alignment',
          'Sending the error back through a fixed random B instead of W1ᵀ still trains the hidden layer'),
-        ('< 90°', 'Why it works',
-         'W1 lines up with B, so the error signal points roughly the right way')]
+        ('?', 'Worth thinking about',
+         'Stop using W1 to send the error back, use a random B instead, and the network still learns, '
+         'almost as well as backprop. Why does this work?')]
 for k, (num, head, body) in enumerate(take):
     y = 1.75 + k * 1.45
     text(s, 0.6, y, 2.8, 0.8, num, size=40, bold=True, anchor=MSO_ANCHOR.MIDDLE)
@@ -598,7 +599,9 @@ s.notes_slide.notes_text_frame.text = (
     'and it reads handwritten digits with 98.33% accuracy.\n'
     'Second, backprop needs the feedback weights to match the forward weights exactly, which is hard for the brain. '
     'Feedback alignment replaces them with a fixed random matrix B, and the network still learns: 98.01%.\n'
-    'Third, it works because W1 lines up with B, so the error signal stays within 90 degrees of the backprop one.\n'
+    'Third, and to us the most interesting part: when we stop using W1 to send the error back and use a random '
+    'matrix B instead, the network still learns to adjust itself, and ends up almost as good as backprop. '
+    'Why this works is worth thinking about.\n'
     'Our code is on GitHub. Thank you, we are happy to take questions.')
 
 prs.save(OUT)
