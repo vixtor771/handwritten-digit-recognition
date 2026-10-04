@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1110 520" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1110" height="520" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#eb6834"/></marker>
+  </defs>
+
+  <!-- Left: chain -->
+  <text x="40" y="40" font-size="18" font-weight="bold" fill="#0b0b0b">Your 3-node chain (Challenge 3)</text>
+  <text x="40" y="64" font-size="13" fill="#52514e">one neuron per layer, one weight between layers</text>
+  <g font-size="14" fill="#0b0b0b">
+    <circle cx="70" cy="200" r="22" fill="#eef4fc" stroke="#2a78d6" stroke-width="2"/><text x="70" y="205" text-anchor="middle">s0</text>
+    <circle cx="190" cy="200" r="22" fill="#eef4fc" stroke="#2a78d6" stroke-width="2"/><text x="190" y="205" text-anchor="middle">s1</text>
+    <circle cx="310" cy="200" r="22" fill="#eef4fc" stroke="#2a78d6" stroke-width="2"/><text x="310" y="205" text-anchor="middle">s2</text>
+    <circle cx="430" cy="200" r="22" fill="#eef4fc" stroke="#2a78d6" stroke-width="2"/><text x="430" y="205" text-anchor="middle">s3</text>
+    <line x1="92" y1="200" x2="166" y2="200" stroke="#52514e" stroke-width="2" marker-end="url(#a)"/><text x="129" y="190" text-anchor="middle" font-size="13">w0</text>
+    <line x1="212" y1="200" x2="286" y2="200" stroke="#52514e" stroke-width="2" marker-end="url(#a)"/><text x="249" y="190" text-anchor="middle" font-size="13">w1</text>
+    <line x1="332" y1="200" x2="406" y2="200" stroke="#52514e" stroke-width="2" marker-end="url(#a)"/><text x="369" y="190" text-anchor="middle" font-size="13">w2</text>
+    <path d="M410,232 Q370,262 330,232" fill="none" stroke="#eb6834" stroke-width="2" marker-end="url(#r)"/>
+    <text x="370" y="278" text-anchor="middle" font-size="13" fill="#eb6834">error from 1 neuron</text>
+  </g>
+  <g font-size="14" fill="#0b0b0b">
+    <text x="40" y="340">delta for neuron 2:</text>
+    <text x="40" y="368" font-family="Menlo, monospace" font-size="13">delta2 = delta3 * w2 * s2(1-s2)</text>
+    <text x="40" y="410" fill="#52514e" font-size="13">only one neuron after it, so only one term</text>
+  </g>
+
+  <line x1="540" y1="30" x2="540" y2="490" stroke="#d9d8d3" stroke-width="1.5"/>
+
+  <!-- Right: layers -->
+  <text x="580" y="40" font-size="18" font-weight="bold" fill="#0b0b0b">Digit network (784 → 1000 → 10)</text>
+  <text x="580" y="64" font-size="13" fill="#52514e">drawn small: 4 inputs → 3 hidden → 3 outputs</text>
+  <g stroke="#b9b8b2" stroke-width="1">
+    <line x1="622" y1="120" x2="758" y2="140"/><line x1="622" y1="120" x2="758" y2="210"/><line x1="622" y1="120" x2="758" y2="280"/>
+    <line x1="622" y1="170" x2="758" y2="140"/><line x1="622" y1="170" x2="758" y2="210"/><line x1="622" y1="170" x2="758" y2="280"/>
+    <line x1="622" y1="240" x2="758" y2="140"/><line x1="622" y1="240" x2="758" y2="210"/><line x1="622" y1="240" x2="758" y2="280"/>
+    <line x1="622" y1="290" x2="758" y2="140"/><line x1="622" y1="290" x2="758" y2="210"/><line x1="622" y1="290" x2="758" y2="280"/>
+    <line x1="802" y1="140" x2="938" y2="140"/><line x1="802" y1="140" x2="938" y2="280"/>
+    <line x1="802" y1="280" x2="938" y2="140"/><line x1="802" y1="280" x2="938" y2="210"/><line x1="802" y1="280" x2="938" y2="280"/>
+  </g>
+  <g stroke="#2a78d6" stroke-width="2.5">
+    <line x1="802" y1="210" x2="938" y2="140"/><line x1="802" y1="210" x2="938" y2="210"/><line x1="802" y1="210" x2="938" y2="280"/>
+  </g>
+  <g fill="#eef4fc" stroke="#2a78d6" stroke-width="2">
+    <circle cx="600" cy="120" r="18"/><circle cx="600" cy="170" r="18"/><circle cx="600" cy="240" r="18"/><circle cx="600" cy="290" r="18"/>
+    <circle cx="780" cy="140" r="22"/><circle cx="780" cy="280" r="22"/>
+    <circle cx="960" cy="140" r="22"/><circle cx="960" cy="210" r="22"/><circle cx="960" cy="280" r="22"/>
+  </g>
+  <circle cx="780" cy="210" r="22" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+  <text x="780" y="215" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="bold">j</text>
+  <text x="600" y="210" text-anchor="middle" font-size="16" fill="#52514e">⋮</text>
+  <g font-size="13" fill="#52514e" text-anchor="middle">
+    <text x="600" y="335">pixels (s0)</text><text x="780" y="335">hidden (s1)</text><text x="960" y="335">outputs (s2)</text>
+  </g>
+  <text x="1000" y="196" font-size="13" fill="#2a78d6">j connects to</text>
+  <text x="1000" y="213" font-size="13" fill="#2a78d6">every output,</text>
+  <text x="1000" y="236" font-size="13" fill="#eb6834">so error comes</text>
+  <text x="1000" y="253" font-size="13" fill="#eb6834">back from all</text>
+  <g font-size="14" fill="#0b0b0b">
+    <text x="580" y="380">delta for hidden neuron j: add up the errors of all outputs</text>
+    <text x="580" y="408" font-family="Menlo, monospace" font-size="13">delta1[j] = s1[j](1-s1[j]) * Σ_k W1[k,j] * delta2[k]</text>
+    <text x="580" y="440" fill="#52514e" font-size="13">in code, the sum for all 1000 neurons at once:  W1.T @ delta2</text>
+    <text x="580" y="466" fill="#52514e" font-size="13">feedback alignment replaces W1[k,j] with a fixed random B[j,k]</text>
+  </g>
+</svg>
